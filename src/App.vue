@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <p>
-      <router-link to="/">Home</router-link>
-      <router-link to="/places">Places</router-link>
-    </p>
+    <router-link to="/">Home</router-link>
+    <router-link to="/places">Places</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -14,9 +12,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body, html {
   padding: 0;
   margin: 0;
 }
+
 </style>
