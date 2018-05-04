@@ -9,10 +9,12 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 import Home from './components/Home';
 import VenueIndex from './components/VenueIndex';
+import Autocomplete from './components/Autocomplete';
 
 const routes = [
   { path: '/' , component: Home },
-  { path: '/venues' , component: VenueIndex }
+  { path: '/venues' , component: VenueIndex },
+  { path: '/venues/new', component: Autocomplete }
 ];
 
 const router = new VueRouter({

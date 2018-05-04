@@ -15,6 +15,7 @@
         <div class="navbar-end">
           <router-link to="/" class="navbar-item">Home</router-link>
           <router-link to="/venues" class="navbar-item">Venues</router-link>
+          <router-link to="/venues/new" class="navbar-item">Add Venues</router-link>
         </div>
       </div>
       <!-- end navbar-menu -->
