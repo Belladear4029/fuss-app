@@ -13,21 +13,24 @@ export default {
     });
 
     this.infoWindow = new google.maps.InfoWindow();
+  },
+  watch: {
+    venues() {
+      this.markers = this.venues.map(venue => {
+        const marker = new google.maps.Marker({
+          position: venue.location,
+          map: this.map
+        });
 
-    this.markers = this.venues.map(venue => {
-      const marker = new google.maps.Marker({
-        position: venue.location,
-        map: this.map
+        marker.addListener('click', () => {
+          this.infoWindow.setContent(`
+            <h3>${venue.name}</h3>
+            <p>${venue.address}</p>
+          `)
+          this.infoWindow.open(this.map, marker);
+        });
       });
-
-      marker.addListener('click', () => {
-        this.infoWindow.setContent(`
-          <h3>${venue.name}</h3>
-          <p>${venue.address}</p>
-        `)
-        this.infoWindow.open(this.map, marker);
-      });
-    });
+    }
   }
 }
 </script>

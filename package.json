@@ -5,10 +5,13 @@
   "scripts": {
     "start:client": "vue-cli-service serve --open",
     "start:server": "nodemon index",
+    "seed": "node db/seeds",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "bulma": "^0.7.1",
     "express": "^4.16.3",
