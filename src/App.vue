@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <VenueIndex />
+    <p>
+      <router-link to="/">Home</router-link>
+      <router-link to="/places">Places</router-link>
+    </p>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import VenueIndex from './components/VenueIndex';
 export default {
-  name: 'app',
-  components: {
-    VenueIndex
-  }
+  name: 'app'
 }
 </script>
 
