@@ -29,5 +29,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.map {
+  height: calc(100vh - 52px);
+}
 </style>

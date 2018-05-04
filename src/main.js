@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
 
+require('./assets/scss/style.scss'); // eslint-disable-line
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
@@ -10,7 +12,7 @@ import VenueIndex from './components/VenueIndex';
 
 const routes = [
   { path: '/' , component: Home },
-  { path: '/places' , component: VenueIndex }
+  { path: '/venues' , component: VenueIndex }
 ]
 
 const router = new VueRouter({
