@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <!-- navbar-brand -->
       <div class="navbar-brand">
         <a role="button" class="navbar-burger" v-bind:class="{ 'is-active': navIsOpen }" v-on:click="toggleNav()">
           <span aria-hidden="true"></span>
@@ -9,15 +8,12 @@
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <!-- end navbar-brand -->
-      <!-- navbar-menu -->
       <div class="navbar-menu" v-bind:class="{ 'is-active': navIsOpen }">
         <div class="navbar-end">
           <router-link to="/" class="navbar-item">Home</router-link>
           <router-link to="/venues" class="navbar-item">Venues</router-link>
         </div>
       </div>
-      <!-- end navbar-menu -->
     </nav>
     <router-view></router-view>
   </div>
@@ -27,7 +23,7 @@
 export default {
   name: 'app',
   data() {
-    return { navIsOpen: false }
+    return { navIsOpen: false };
   },
   methods: {
     toggleNav() {
@@ -39,7 +35,7 @@ export default {
       this.navIsOpen = false;
     }
   }
-}
+};
 </script>
 
 <style>

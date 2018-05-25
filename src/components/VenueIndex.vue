@@ -1,6 +1,6 @@
 <template>
   <div>
-    <google-map v-bind:center="{ lat: 51.515, lng: -0.078 }" v-bind:venues="venues" />
+    <google-map v-bind:venues="venues" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       venues: []
-    }
+    };
   },
   mounted() {
     axios.get('/api/venues')
@@ -21,7 +21,7 @@ export default {
   components: {
     GoogleMap
   }
-}
+};
 </script>
 
 <style scoped>

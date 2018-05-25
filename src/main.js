@@ -9,10 +9,12 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 import Home from './components/Home';
 import VenueIndex from './components/VenueIndex';
+import VenueShow from './components/VenueShow';
 
 const routes = [
   { path: '/' , component: Home },
-  { path: '/venues' , component: VenueIndex }
+  { path: '/venues' , component: VenueIndex },
+  { path: '/venues/:id', component: VenueShow }
 ];
 
 const router = new VueRouter({
