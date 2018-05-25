@@ -10,10 +10,12 @@ Vue.use(VueRouter);
 import Home from './components/Home';
 import VenueIndex from './components/VenueIndex';
 import VenueShow from './components/VenueShow';
+import VenueNew from './components/VenueNew';
 
 const routes = [
   { path: '/' , component: Home },
   { path: '/venues' , component: VenueIndex },
+  { path: '/venues/new', component: VenueNew },
   { path: '/venues/:id', component: VenueShow }
 ];
 
