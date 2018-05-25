@@ -12,6 +12,7 @@
         <div class="navbar-end">
           <router-link to="/" class="navbar-item">Home</router-link>
           <router-link to="/venues" class="navbar-item">Venues</router-link>
+          <router-link to="/venues/new" class="navbar-item">Add Venues</router-link>
         </div>
       </div>
     </nav>
@@ -38,9 +39,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body, html {
   padding: 0;
   margin: 0;
 }
+
 </style>
