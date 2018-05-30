@@ -15,7 +15,7 @@
         </div>
       </div>
         <router-link v-bind:to="editLink" class="button is-info" >Edit</router-link>
-        <button v-on:click="handleDelete()" class="button is-danger">Delete</button>
+        <button v-on:click="handleDelete" class="button is-danger">Delete</button>
     </div>
   </section>
 </template>
