@@ -5,13 +5,13 @@
         <div class="field">
           <label class="label">Name</label>
           <div class="control">
-            <input class="input" type="text" name="description" placeholder="Text name" v-model="venue.name">
+            <input class="input" type="text" name="name" placeholder="Text name" v-model="venue.name">
           </div>
         </div>
         <div class="field">
           <label class="label">Address</label>
           <div class="control">
-            <Autocomplete name="address" v-bind:handle-place-change="handlePlaceChange" />
+            <Autocomplete name="address" v-bind:handle-place-change="handlePlaceChange"/>
           </div>
         </div>
         <div class="field">
@@ -46,20 +46,23 @@ export default {
   },
   methods: {
     handleSubmit() {
+      console.log(this.venue);
+      
       axios
         .post('/api/venues', this.venue)
-        // .then(() => this.$router.push('/venues')); // this one doesn't work
-        // need to work on it!!
-        .then(console.log(this.venue));
+        .then(() => this.$router.push('/venues'));
     },
-    handlePlaceChange({ geometry: { location } }) {
+    handlePlaceChange({ formatted_address: address, geometry: { location } }) {
+      this.venue.address = address;
       this.venue.location = location.toJSON();
+      console.log(this.venue);
+      
     }
   },
   components: {
     Autocomplete
   }
-}
+};
 </script>
 <style>
 

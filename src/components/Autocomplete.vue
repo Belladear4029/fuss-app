@@ -1,6 +1,6 @@
 <template>
   <div class="field">
-    <input ref="autocomplete" class="input" placeholder="Text address" name="address" />
+    <input ref="autocomplete" class="input" placeholder="Text address" />
   </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
 
     this.autocomplete.addListener('place_changed', () => {
       const place = this.autocomplete.getPlace();
+      
       this.handlePlaceChange(place);
     });
   }
