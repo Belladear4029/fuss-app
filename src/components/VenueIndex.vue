@@ -17,7 +17,6 @@ export default {
   mounted() {
     axios.get('/api/venues')
       .then(res => this.venues = res.data);
-      
   },
   components: {
     GoogleMap

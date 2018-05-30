@@ -1,5 +1,6 @@
 <template>
   <section class="section">
+  <h1>Edit</h1>
     <div class="container">
       <form  v-on:submit.prevent="handleSubmit()">
         <div class="field">
@@ -44,10 +45,15 @@ export default {
       venue: {}
     };
   },
+  mounted() {
+    axios.get(`/api/venues/${this.$route.params.id}`)
+      .then(res => this.venue = res.data);
+      // .then(res => console.log(res.data))
+  },
   methods: {
     handleSubmit() {
       axios
-        .post('/api/venues', this.venue)
+        .put(`/api/venues/${this.$route.params.id}`, this.venue)
         .then(() => this.$router.push('/venues'));
     },
     handlePlaceChange({ formatted_address: address, geometry: { location } }) {

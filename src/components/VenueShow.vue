@@ -14,6 +14,8 @@
           <google-map v-bind:center="venue.location" />
         </div>
       </div>
+        <router-link v-bind:to="editLink" class="button is-info" >Edit</router-link>
+        <button class="button is-danger">Delete</button>
     </div>
   </section>
 </template>
@@ -28,9 +30,17 @@ export default {
       venue: {}
     };
   },
+  computed: {
+    editLink() {
+      return `/venues/${this.$route.params.id}/edit`;
+    }
+  },
   mounted() {
     axios.get(`/api/venues/${this.$route.params.id}`)
       .then(res => this.venue = res.data);
+  },
+  methods: {
+
   },
   components: {
     GoogleMap
